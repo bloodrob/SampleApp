@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SampleApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navContactTxt">testing for bottom navigation fragment view.we named as home</string>
+    <string name="navSettingTxt">And we called this fragment assetting</string>
+    <string name="navPersionTxt">Person</string>
+    <string name="navContactLabel">Home</string>
+    <string name="navSettingLabel">Setting</string>
+</resources>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    /* for horizontal tab layout */
+    <LinearLayout
+        android:id="@+id/tab_llOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/sampleTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:tabMode="scrollable"
+            android:layout_marginTop="15dp"
+            android:background="#1db995">
+        </com.google.android.material.tabs.TabLayout>
+    </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tab_llOut">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                /* viewpager for tab layout */
+                <LinearLayout
+                    android:id="@+id/page_llOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical">
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/sampleViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+
+
+                /* sample of simple cardview */
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/demoC"
+                    android:layout_below="@+id/nav_llOut"
+                    android:layout_width="200dp"
+                    android:layout_height="220dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="15dp">
+
+                    <TextView
+                        android:id="@+id/demo_title"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:textColor="#0987BE"
+                        android:background="@drawable/card_rounded_background"
+                        android:text="This is the sample card"/>
+
+
+                </androidx.cardview.widget.CardView>
+                /* for horizontal card view */
+                <LinearLayout
+                    android:id="@+id/rec_llOut"
+                    android:layout_below="@+id/page_llOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+            </LinearLayout>
+                /*for bottom navigation fragment view*/
+            <LinearLayout
+                android:id="@+id/nav_llOut"
+                android:layout_below="@id/rec_llOut"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <fragment
+                    android:id="@+id/sampleNavHostFrag"
+                    class="androidx.navigation.fragment.NavHostFragment"
+                    app:defaultNavHost="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:navGraph="@navigation/nav_graph"/>
+
+            </LinearLayout>
+            </RelativeLayout>
+    </ScrollView>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentBottom="true"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/bottom_nav"/>
+
+    </RelativeLayout>
+</RelativeLayout>
